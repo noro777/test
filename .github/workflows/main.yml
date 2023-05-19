@@ -1,6 +1,6 @@
 #aaaaaaaaaaaaa
 
-name: CI
+name: main_test
 
 on: 
   push:
