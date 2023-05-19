@@ -1,7 +1,10 @@
 #aaaaaaaaaaaaa
 
 name: main_test
-
+env : 
+  APPLICATION_NAME : "Name"
+  PACKAGE_NAME     : "flasek-deploy-version-${{ github.sha }}"
+  
 on: 
   push:
     branches: 
@@ -14,6 +17,11 @@ jobs:
     steps:
       - name: "print hello test"
         run : echo "Hello test"
+      
+      - name : execute commands test
+        run  : |
+          echo "APPLICATION_NAME : ${{ env.APPLICATION_NAME }}"
+          echo "PACKAGE_NAME : ${{ env.PACKAGE_NAME }}"
   
   my_build:
      runs-on: ubuntu-latest
@@ -21,3 +29,8 @@ jobs:
      steps:
       - name: "print hello build"
         run : echo "Hello build"
+      
+      - name : execute commands build
+        run  : |
+          echo "APPLICATION_NAME : ${{ env.APPLICATION_NAME }}"
+          echo "PACKAGE_NAME : ${{ env.PACKAGE_NAME }}"
