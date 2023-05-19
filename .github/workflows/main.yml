@@ -1,0 +1,22 @@
+#aaaaaaaaaaaaa
+
+name: CI
+
+on: 
+  push:
+    branches: 
+      - master
+
+jobs:
+  my_test:
+    runs-on: ubuntu:latest
+    
+    steps:
+      - name: "print hello test"
+        run : echo "Hello test"
+  
+  my_build:
+     runs-on: ubuntu:latest
+     steps:
+      - name: "print hello build"
+        run : echo "Hello build"
